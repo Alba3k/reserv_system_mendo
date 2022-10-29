@@ -1,0 +1,79 @@
+{% load static %}
+
+<header id="header" class="header-modern  light submenu-light" data-transparent="true">
+    <div class="header-inner">
+        <div class="container">
+ 
+            <div id="logo"> 
+                <a href="{% url 'index' %}">
+                <span class="logo-default">MENDO</span>
+                <span class="logo-dark">MENDO</span>
+                </a>
+            </div>
+
+            <div id="search"><a id="btn-search-close" class="btn-search-close" aria-label="Close search form"><i
+                        class="icon-x"></i></a>
+                <form class="search-form" action="search-results-page.html" method="get">
+                    <input class="form-control" name="q" type="text" placeholder="Type & Search..." />
+                    <span class="text-muted">Для поиска начните набор символов и нажмите "Enter" или "ESC" для
+                        закрытия</span>
+                </form>
+            </div>
+
+            <div class="header-extras">
+                <ul>
+                    <li>
+                        <a id="btn-search" href="#"> <i class="icon-search"></i></a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div id="mainMenu-trigger">
+                <a class="lines-button x"><span class="lines"></span></a>
+            </div>
+            
+            <div id="mainMenu">
+                <div class="container">
+                    <nav>
+                        <ul>
+                            <li><a href="{% url 'index' %}">Главная</a></li>
+                            <li class="dropdown"><a href="#">Каталог номеров</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{% url 'catalog' %}">Номера</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown"><a href="#">Услуги отеля</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">SPA услуги</a></li>
+                                    <li><a href="#">Fitness услуги</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown"><a href="#">Контакты</a>
+                                <ul class="dropdown-menu">
+                                </ul>
+                            </li>
+                            <li class="dropdown"><a href="#">Блог</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Новостная лента</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown"><a href="#">Аккаунт</a>
+                                <ul class="dropdown-menu">
+                                    {% if user.is_authenticated %}
+                                    <li><a href="{% url 'profile' %}">Профиль пользователя</a></li>
+                                    <li><a href="{% url 'logout' %}">Выход</a></li>
+                                    <li><a href="#">Востановление пароля</a></li>
+                                    {% else %}
+                                    <li><a href="{% url 'login' %}">Вход</a></li>
+                                    <li><a href="{% url 'register' %}">Регистрация</a></li>
+                                    <li><a href="#">Востановление пароля</a></li>
+                                    {% endif %}
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

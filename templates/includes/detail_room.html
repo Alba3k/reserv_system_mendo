@@ -1,0 +1,184 @@
+{% load static %}
+
+<section id="page-title" data-bg-parallax="{% static 'images/slider/back_14.jpg' %}">
+    <div class="container">
+        <div class="slide-captions text-center text-light">
+            <h2 class="font-weight-700" style="font-size: 60px; line-height: 60px; margin-bottom: 14px;">
+                <span>Детальная информация</span>
+            </h2>
+        </div>
+    </div>
+</section>
+
+<section id="section2" class="p-t-100">
+    <div class="container">
+        <div class="heading-text heading-section text-center">
+            <h2>номер: {{ room.number }}</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="icon-box effect medium square color">
+                    <div class="icon"> <a href="#"><i class="fa fa-info"></i></a> </div>
+                    <h3>Категория номера: {{ room.room_type.short_desc }}</h3>
+                    <p>Категория данного номера.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="icon-box effect medium square color">
+                    <div class="icon"> <a href="#"><i class="fa fa-coins"></i></a> </div>
+                    <h3>Цена номера: {{ room.price }}</h3>
+                    <p>Цена номера за сутки проживания.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="icon-box effect medium square color">
+                    <div class="icon"> <a href="#"><i class="fa fa-home"></i></a> </div>
+                    <h3>Вместимость гостей: {{ room.capacity }}</h3>
+                    <p>Количество гостей, для заселения в данный номер.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="icon-box effect medium square color">
+                    <div class="icon"> <a href="#"><i class="fa fa-bed"></i></a> </div>
+                    <h3>Количество кроватей: {{ room.number_of_beds }}</h3>
+                    <p>Количество кроватей установленных в данном номере.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="icon-box effect medium square color">
+                    <div class="icon"> <a href="#"><i class="fa fa-asterisk"></i></a> </div>
+                    {% if room.room_wifi == 'AVAILABLE' %}
+                    <h3>Кондиционер: <strong>в наличии</strong></h3>
+                    {% else %}
+                    <h3>Кондиционер: <strong>отсутствует</strong></h3>
+                    {% endif %}
+                    <p>Наличие кондиционера в номере.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="icon-box effect medium square color">
+                    <div class="icon"> <a href="#"><i class="fa fa-wifi"></i></a> </div>
+                    {% if room.room_wifi == 'AVAILABLE' %}
+                    <h3>Wi-Fi: <strong>в наличии</strong></h3>
+                    {% else %}
+                    <h3>Wi-Fi: <strong>отсутствует</strong></h3>
+                    {% endif %}
+                    <p>Доступность сети Wi-Fi в данном номере.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="icon-box effect medium square color">
+                    <div class="icon"> <a href="#"><i class="fa fa-tv"></i></a> </div>
+                    {% if room.room_tv != 'None' %}
+                    <h3>TV: <strong>{{ room.room_tv }}</strong></h3>
+                    {% else %}
+                    <h3>отсутствует</h3>
+                    {% endif %}
+                    <p>Наличие TV в данном номере.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="icon-box effect medium square color">
+                    <div class="icon"> <a href="#"><i class="fa fa-shower"></i></a> </div>
+                    {% if room.room_bathroom == 'ATTACHED' %}
+                    <h3>в наличии</h3>
+                    {% else %}
+                    <h3>отсутствует</h3>
+                    {% endif %}
+                    <p>Наличие душа, ванной комнаты.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div id="portfolio" class="grid-layout portfolio-2-columns" data-margin="20">
+
+        <div class="portfolio-item img-zoom ct-photography ct-marketing ct-media">
+            <div class="portfolio-item-wrap">
+                <div class="portfolio-image">
+                    <a href="#"><img src="/media/{{MEDIA_URL}}{{room.room_image}}" alt=""></a>
+                </div>
+                <div class="portfolio-description">
+                    <a title="фото номера" data-lightbox="image" href="/media/{{MEDIA_URL}}{{room.room_image}}">
+                        <i class="fa fa-expand"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="portfolio-item img-zoom ct-photography ct-marketing ct-media">
+            <div class="portfolio-item-wrap">
+                <div class="portfolio-image">
+                    <a href="#"><img src="/media/{{MEDIA_URL}}{{room.room_image_2}}" alt=""></a>
+                </div>
+                <div class="portfolio-description">
+                    <a title="фото номера" data-lightbox="image" href="/media/{{MEDIA_URL}}{{room.room_image_2}}">
+                        <i class="fa fa-expand"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="portfolio-item img-zoom ct-photography ct-marketing ct-media">
+            <div class="portfolio-item-wrap">
+                <div class="portfolio-image">
+                    <a href="#"><img src="/media/{{MEDIA_URL}}{{room.room_image_3}}" alt=""></a>
+                </div>
+                <div class="portfolio-description">
+                    <a title="фото номера" data-lightbox="image" href="/media/{{MEDIA_URL}}{{room.room_image_3}}">
+                        <i class="fa fa-expand"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="portfolio-item img-zoom ct-photography ct-marketing ct-media">
+            <div class="portfolio-item-wrap">
+                <div class="portfolio-image">
+                    <a href="#"><img src="/media/{{MEDIA_URL}}{{room.room_image_4}}" alt=""></a>
+                </div>
+                <div class="portfolio-description">
+                    <a title="фото номера" data-lightbox="image" href="/media/{{MEDIA_URL}}{{room.room_image_4}}">
+                        <i class="fa fa-expand"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="p-b-10">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="heading-text heading-section text-center">
+                    <h3>описание номера</h3>
+                </div>
+                <p>
+                <p><span class="dropcap dropcap-large"> R </span>{{ room.description | linebreaks }}</p>
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                {% if user.is_authenticated %}
+                <h5>Забронировать номер на указанную дату</h5>
+                <a class="btn btn-success" href="{% url 'reserved' %}">
+                    <i class="icon-shopping-cart"></i> Забронировать номер</a>
+                {% else %}
+                <h6>Для бронирования номера необходимо войти в аккаунт</h6>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

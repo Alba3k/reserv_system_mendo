@@ -1,0 +1,109 @@
+/*Rooms*/
+.room {
+	margin-bottom: 100px;
+}
+
+.room-image {
+	border-radius: 4px;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+.room-image img {
+	border-radius: 4px;
+	width: 100%;
+	opacity: 1;
+	transition: all ease 0.3s;
+	cursor: pointer;
+}
+
+.room-image:hover img {
+	opacity: 0.7;
+}
+
+.room-image .room-title {
+	background: rgba(0, 0, 0, 0) linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 100%) repeat scroll 0 0;
+	bottom: 0px;
+	color: #fff;
+	font-weight: 600;
+	padding: 10px 10px 30px;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	font-size: 18px;
+	border-radius: 0 0 4px 4px;
+	float: left;
+}
+
+.room-badge {
+	background: #e01a33 none repeat scroll 0 0;
+	border-radius: 50%;
+	color: #fff;
+	font-size: 0.8333em;
+	font-weight: bold;
+	height: 42px;
+	line-height: 1.0833em;
+	margin: 0;
+	padding: 10px 0 0;
+	position: absolute;
+	right: 10px;
+	text-align: center;
+	text-transform: uppercase;
+	top: 10px;
+	width: 42px;
+	z-index: 1;
+}
+
+.room-details>p {
+	border-bottom: 1px solid #f5f5f5;
+	margin-bottom: 12px;
+	padding-bottom: 10px;
+}
+
+
+#header {
+    /* ----------------------------------------------------------------
+Main Menu - red color #dc3545
+-----------------------------------------------------------------*/ }
+  #header.header-modern:not(.header-active).header-colored .header-inner,
+  #header.header-modern:not(.header-active).header-colored #header-wrap {
+    background-color: #dc3545; }
+  #header.header-colored .header-inner,
+  #header.header-colored #header-wrap {
+    background-color: #dc3545; }
+  #header #mainMenu nav > ul > li.hover-active > a,
+  #header #mainMenu nav > ul > li.hover-active > span, #header #mainMenu nav > ul > li.current > a,
+  #header #mainMenu nav > ul > li.current > span, #header #mainMenu nav > ul > li:hover > a,
+  #header #mainMenu nav > ul > li:hover > span, #header #mainMenu nav > ul > li:focus > a,
+  #header #mainMenu nav > ul > li:focus > span {
+    color: #dc3545; }
+  #header #mainMenu nav > ul > li .dropdown-menu > li > a:focus, #header #mainMenu nav > ul > li .dropdown-menu > li > a:hover, #header #mainMenu nav > ul > li .dropdown-menu > li > a:active,
+  #header #mainMenu nav > ul > li .dropdown-menu > li > span:focus,
+  #header #mainMenu nav > ul > li .dropdown-menu > li > span:hover,
+  #header #mainMenu nav > ul > li .dropdown-menu > li > span:active,
+  #header #mainMenu nav > ul > li .dropdown-menu > li [class*="col-"] > ul > li > a:focus,
+  #header #mainMenu nav > ul > li .dropdown-menu > li [class*="col-"] > ul > li > a:hover,
+  #header #mainMenu nav > ul > li .dropdown-menu > li [class*="col-"] > ul > li > a:active {
+    color: #dc3545; }
+  #header #mainMenu nav > ul > li .dropdown-menu > li.current > a,
+  #header #mainMenu nav > ul > li .dropdown-menu > li.current > span, #header #mainMenu nav > ul > li .dropdown-menu > li:hover > a,
+  #header #mainMenu nav > ul > li .dropdown-menu > li:hover > span, #header #mainMenu nav > ul > li .dropdown-menu > li:focus > a,
+  #header #mainMenu nav > ul > li .dropdown-menu > li:focus > span, #header #mainMenu nav > ul > li .dropdown-menu > li:active > a,
+  #header #mainMenu nav > ul > li .dropdown-menu > li:active > span, #header #mainMenu nav > ul > li .dropdown-menu > li.hover-active > a,
+  #header #mainMenu nav > ul > li .dropdown-menu > li.hover-active > span {
+    color: #dc3545; }
+  #header #mainMenu.menu-rounded nav > ul > li.current > a, #header #mainMenu.menu-rounded nav > ul > li:hover > a, #header #mainMenu.menu-rounded nav > ul > li:focus > a {
+    background-color: #dc3545; }
+  #header #mainMenu.menu-outline nav > ul > li.current > a, #header #mainMenu.menu-outline nav > ul > li:hover > a, #header #mainMenu.menu-outline nav > ul > li:focus > a {
+    color: #dc3545;
+    border-color: #dc3545; }
+  #header #mainMenu.menu-lines nav > ul > li.current > a, #header #mainMenu.menu-lines nav > ul > li:hover > a, #header #mainMenu.menu-lines nav > ul > li:focus > a {
+    color: #dc3545; }
+    #header #mainMenu.menu-lines nav > ul > li.current > a:after, #header #mainMenu.menu-lines nav > ul > li:hover > a:after, #header #mainMenu.menu-lines nav > ul > li:focus > a:after {
+      background-color: #dc3545; }
+  #header #mainMenu.menu-hover-background nav > ul > li.current, #header #mainMenu.menu-hover-background nav > ul > li:hover, #header #mainMenu.menu-hover-background nav > ul > li:focus {
+    background-color: #dc3545; }
+  #header #shopping-cart > a .shopping-cart-items {
+    background: #dc3545; }
+
+

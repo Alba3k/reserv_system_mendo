@@ -1,0 +1,37 @@
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+<section class="p-t-150 p-b-200"
+    style="background-image:url({% static 'images/contacts/background.png' %}); background-position:71% 22%;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="m-b-10">Логин: {{ user.username }}</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 m-b-30">
+                    <address>
+                        <strong>Фамилия:</strong><br>
+                        {{ user.last_name }}<br>
+                    </address>
+                </div>
+
+                <div class="col-lg-4 m-b-30">
+                    <address>
+                        <strong>Имя:</strong><br>
+                        {{ user.first_name }}<br>
+                    </address>
+                </div>
+
+                <div class="col-lg-4 m-b-30">
+                    <address>
+                        <strong>Электронная почта:</strong><br>
+                        {{ user.email }}<br>
+                    </address>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

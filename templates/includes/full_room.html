@@ -1,0 +1,44 @@
+{% load static %}
+
+<section>
+    <div class="container">
+        <div class="text-center m-b-40">
+            <h2 class="text-medium m-t-0">Каталог номеров отеля</h2>
+            <div class="seperator"><i class="fa fa-dot-circle-o"></i></div>
+
+            <p class="lead">Отель “MENDO” предлагает для проживания <strong>{{ total_room }}</strong> уютных номера различных категорий.<br>
+                Территория отеля является зоной, свободной от курения.</p>
+            
+        </div>
+        <div class="row">
+
+            {% for room in object_list %}
+            <div class="col-lg-4">
+                <div class="room">
+                    <div class="room-image">
+                    <a href="{{ room.slug }}"> 
+                        <img src="/media/{{MEDIA_URL}}{{room.room_image}}" alt="room image">
+                    </a>
+                    </div>
+                    <div class="room-details">
+                        <ul class="list-icon list-icon-arrow list-icon-colored">
+                            <li>Номер №: <strong>{{ room.number }}</strong></li>
+                            <li>Тип номера: <strong>{{ room.room_type }}</strong></li>
+                            <li>Количество гостей: <strong>{{ room.capacity }}</strong></li>
+                        </ul>
+                        <div class="float-left">
+                            <h4>$ {{ room.price }}<small>/ сутки</small></h4>
+                        </div>
+                        <div class="float-right">
+                            <a href="{{ room.slug }}" class="btn btn-warning"><i class="fa fa-receipt"></i> Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row">
+            {% include "includes/pagination.html" %}
+        </div>
+    </div>
+</section>

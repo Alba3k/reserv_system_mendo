@@ -1,0 +1,90 @@
+{% load static %}
+
+<section id="page-title" data-bg-parallax="{% static 'images/slider/back_2.jpg' %}">
+    <div class="container">
+        <div class="slide-captions text-center text-light">
+            <h2 class="font-weight-700" style="font-size: 60px; line-height: 60px; margin-bottom: 14px;">
+                <span>{{ post.title }}</span>
+            </h2>
+        </div>
+    </div>
+</section>
+
+<section id="page-content" class="sidebar-right">
+    <div class="container">
+        <div class="row">
+            <!-- content -->
+            <div class="content col-lg-9">
+                <!-- Blog -->
+                <div id="blog" class="single-post">
+                    <!-- Post single item-->
+                    <div class="post-item">
+                        <div class="post-item-wrap">
+                            <div class="carousel dots-inside arrows-visible" data-items="1" data-lightbox="gallery">
+                                
+                                <a href="/media/{{MEDIA_URL}}{{post.photo_1}}" data-lightbox="gallery-image">
+                                    <img alt="image" src="/media/{{MEDIA_URL}}{{post.photo_1}}">
+                                </a>
+
+                                <a href="/media/{{MEDIA_URL}}{{post.photo_2}}" data-lightbox="gallery-image">
+                                    <img alt="image" src="/media/{{MEDIA_URL}}{{post.photo_2}}">
+                                </a>
+
+                                <a href="/media/{{MEDIA_URL}}{{post.photo_3}}" data-lightbox="gallery-image">
+                                    <img alt="image" src="/media/{{MEDIA_URL}}{{post.photo_3}}">
+                                </a>
+
+                                <a href="/media/{{MEDIA_URL}}{{post.photo_4}}" data-lightbox="gallery-image">
+                                    <img alt="image" src="/media/{{MEDIA_URL}}{{post.photo_4}}">
+                                </a>
+
+                                <a href="/media/{{MEDIA_URL}}{{post.photo_5}}" data-lightbox="gallery-image">
+                                    <img alt="image" src="/media/{{MEDIA_URL}}{{post.photo_5}}">
+                                </a>
+
+                                <a href="/media/{{MEDIA_URL}}{{post.photo_6}}" data-lightbox="gallery-image">
+                                    <img alt="image" src="/media/{{MEDIA_URL}}{{post.photo_6}}">
+                                </a>
+
+                                <a href="/media/{{MEDIA_URL}}{{post.photo_7}}" data-lightbox="gallery-image">
+                                    <img alt="image" src="/media/{{MEDIA_URL}}{{post.photo_7}}">
+                                </a>
+
+                                <a href="/media/{{MEDIA_URL}}{{post.photo_8}}" data-lightbox="gallery-image">
+                                    <img alt="image" src="/media/{{MEDIA_URL}}{{post.photo_8}}">
+                                </a>
+
+                            </div>
+                            <div class="post-item-description">
+                                <h2>{{ post.title }}</h2>
+                                <div class="post-meta">
+                                    <span class="post-meta-date"><i class="fa fa-calendar-o"></i>{{ post.publish }}</span>
+                                    <span class="post-meta-category"><a href=""><i class="fa fa-tag"></i>{{ post.cat.name }}</a></span>
+                                </div>
+                                <p>{{ post.body | linebreaks }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar sticky-sidebar col-lg-3">
+                <div class="widget  widget-tags">
+                    <h4 class="widget-title">Тэги</h4>
+                    <div class="tags">
+                        <a href="#">Design</a>
+                        <a href="#">Portfolio</a>
+                        <a href="#">Digital</a>
+                        <a href="#">Branding</a>
+                        <a href="#">HTML</a>
+                        <a href="#">Clean</a>
+                        <a href="#">Peace</a>
+                        <a href="#">Love</a>
+                        <a href="#">CSS3</a>
+                        <a href="#">jQuery</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

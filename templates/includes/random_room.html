@@ -1,0 +1,36 @@
+{% load static %}
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <h2 class="text-medium m-t-0">Прекрасный номерной фонд отеля</h2>
+                <div class="seperator"><i class="fa fa-dot-circle-o"></i></div>
+                <p class="lead">Отель “MENDO” предлагает для проживания множество уютных номеров различных категорий.
+                    Территория отеля является зоной, свободной от курения.</p>
+            </div>
+            <div class="col-lg-8">
+                <div class="rooms carousel" data-items="2" data-margin="20" data-dots="false">
+                    {% for room in features_room %}
+                    <div class="room">
+                        <div class="room-image">
+                            <img src="/media/{{MEDIA_URL}}{{room.room_image}}" alt="room image">
+                            <div class="room-title">Категория: {{ room.room_type.short_desc }}</div>
+                        </div>
+                        <div class="room-details">
+                            <p>{{ room.description | truncatewords:20 }}</p>
+                            <div class="float-left">
+                                <h4>$ {{ room.price }}<small>/ сутки</small></h4>
+                            </div>
+                            <div class="float-right">
+                                <a href="catalog/{{ room.slug }}" class="btn btn-warning"><i class="fa fa-receipt"></i>
+                                    Подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

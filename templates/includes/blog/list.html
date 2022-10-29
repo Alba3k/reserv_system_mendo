@@ -1,0 +1,102 @@
+{% load static %}
+
+<section id="page-title" data-bg-parallax="{% static 'images/slider/back_2.jpg' %}">
+    <div class="container">
+        <div class="slide-captions text-center text-light">
+            <h2 class="font-weight-700" style="font-size: 60px; line-height: 60px; margin-bottom: 14px;">
+                <span>Новости из мира туризма</span>
+            </h2>
+        </div>
+    </div>
+</section>
+
+<section id="page-content" class="sidebar-right">
+    <div class="container">
+        <div class="row">
+
+            <div class="content col-lg-9">
+
+                <div class="page-title">
+                    <h1>Только хорошие новости</h1>
+                    <div class="breadcrumb float-left">
+                        <ul>
+                            <li><a href="{% url 'index' %}">Главная</a>
+                            </li>
+                            <li><a href="{% url 'blog_list' %}">Блог</a>
+                            </li>
+                            <li class="active"><a href="#">Новостная лента</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="blog" class="post-thumbnails">
+
+                    {% for post in posts %}
+                    <div class="post-item">
+                        <div class="post-item-wrap">
+                            <div class="post-image">
+                                <a href="#"><img alt="#" src="/media/{{MEDIA_URL}}{{post.photo_1}}">
+                                </a>
+                                <span class="post-meta-category"><a href="">{{ post.cat }}</a></span>
+                            </div>
+                            <div class="post-item-description">
+                                <span class="post-meta-date"><i class="fa fa-calendar-o"></i>{{ post.publish }}</span>
+                                <span class="post-meta-comments"><a href="#"></a></span>
+                                <h2><a href="{{ post.slug }}">{{ post.title }}</a></h2>
+                                <p>{{ post.body|truncatewords:30|linebreaks }}</p>
+                                <a href="{{ post.slug }}" class="item-link">Более подробно <i class="icon-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                    <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar sticky-sidebar col-lg-3">
+                
+                <div class="widget  widget-tags">
+                    <h4 class="widget-title">Облако тэгов</h4>
+                    <div class="tags">
+                        <a href="#">Design</a>
+                        <a href="#">Portfolio</a>
+                        <a href="#">Digital</a>
+                        <a href="#">Branding</a>
+                        <a href="#">HTML</a>
+                        <a href="#">Clean</a>
+                        <a href="#">Peace</a>
+                        <a href="#">Love</a>
+                        <a href="#">CSS3</a>
+                        <a href="#">jQuery</a>
+                    </div>
+                </div>
+
+                <div class="widget  widget-newsletter">
+                    <form class="widget-subscribe-form" novalidate action="include/subscribe-form.php" role="form"
+                        method="post">
+                        <h4 class="widget-title">Подписка на новости</h4>
+                        <small>Будь в курсе наших последних новостей!</small>
+                        <div class="input-group">
+                            <input type="email" required name="widget-subscribe-form-email"
+                                class="form-control required email" placeholder="Введите ваш Email">
+                            <span class="input-group-btn">
+                                <button type="submit" id="widget-subscribe-submit-button" class="btn"><i
+                                        class="fa fa-paper-plane"></i></button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

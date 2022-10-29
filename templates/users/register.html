@@ -1,0 +1,65 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<section class="fullscreen" class="p-t-150 p-b-200" div data-bg-image="{% static 'images/slider/back_2.jpg' %}">
+  <div class="container">
+    <form method="POST">
+      {% csrf_token %}
+      <div class="row">
+        <div class="col-lg-8 center p-50 background-white b-r-6">
+          <h3>Регистрация аккаунта</h3>
+          <p>Регистрация займет несколько минут, и даст Вам полный контроль над бронированием номеров.</p>
+
+          <div class="form-group">
+            <div class="row">
+              <div class="col-sm-6">
+                {{ form.username|as_crispy_field }}
+              </div>
+              <div class="col-sm-6">
+                {{ form.email|as_crispy_field }}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6">
+                {{ form.first_name|as_crispy_field }}
+              </div>
+              <div class="col-sm-6">
+                {{ form.last_name|as_crispy_field }}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-12">
+                {{ form.password1|as_crispy_field }}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-12">
+                {{ form.password2|as_crispy_field }}
+              </div>
+            </div>
+          </div>
+          <div class="text-left form-group">
+            <button class="btn btn-outline" type="submit"><i class="fa fa-user-edit"></i> Регистрация</button>
+          </div>
+          <p class="small">На главную страницу <a href="{% url 'index' %}">Вернуться на главную страницу</a></p>
+        </div>
+      </div>
+  </div>
+  </form>
+  </div>
+  </div>
+</section>
+
+{% include "includes/footer.html" %}
+
+{% include "includes/scripts.html" %}
+
+{% endblock content %}

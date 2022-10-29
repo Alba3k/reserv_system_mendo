@@ -1,0 +1,101 @@
+{% load static %}
+
+<section class="fullscreen" id="vegas-slideshow">
+    <div class="bg-overlay"></div>
+    <div class="container-fullscreen">
+        <div class="text-middle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="text-light">
+                            <h2 class="text-medium no-margin text-colored">Наш отель 5 звезд</h2>
+                            <h3 class="text-lg no-margin">сервис высшего уровня</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div id="book">
+                            <form novalidate method="POST" action="search/">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Дата заезда</label>
+                                            <div class="input-group">
+                                                <input name="fromDate" class="form-control" id="date-input" type="text">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text" id="basic-addon2"><i
+                                                            class="fas fa-calendar"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Дата выезда</label>
+                                            <div class="input-group">
+                                                <input name="toDate" class="form-control" id="date-input" type="text">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text" id="basic-addon2"><i
+                                                            class="fas fa-calendar"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Взрослых</label>
+                                            <input type="number" min="1" max="10" value="" name="adults"
+                                                placeholder="0">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Детей</label>
+                                            <input type="number" min="0" max="10" value="" name="children"
+                                                placeholder="0">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Категория номера</label>
+                                            <select class="form-control" name="room_type" id="room_type">
+                                                <option value="">Выберите нужную категорию номера</option>
+                                                {% for type in type_room %}
+                                                <option value="{{ type.name }}">{{ type.name }}</option>
+                                                {% endfor %}
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group form-inline text-left">
+                                            <div class="form-check">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <button class="btn btn-danger btn-block" type="submit">Проверить
+                                                доступность</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

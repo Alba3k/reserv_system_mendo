@@ -1,0 +1,36 @@
+{% load static %}
+
+<header id="header" data-transparent="true" class="dark submenu-light">
+    <div class="header-inner">
+        <div class="container">
+            
+            <div id="logo"> 
+                <a href="{% url 'index' %}">
+                    <span class="logo-default">MENDO</span>
+                    <span class="logo-dark">MENDO</span>
+                </a>
+            </div>
+            
+            <div id="search"><a id="btn-search-close" class="btn-search-close" aria-label="Close search form"><i
+                        class="icon-x"></i></a>
+                <form class="search-form" action="search-results-page.html" method="get">
+                    <input class="form-control" name="q" type="text" placeholder="Type & Search..." />
+                    <span class="text-muted">Для поиска начните набор символов и нажмите "Enter" или "ESC" для
+                        закрытия</span>
+                </form>
+            </div>
+        
+            <div class="header-extras">
+                <ul>
+                    <li> <a id="btn-search" href="#"> <i class="icon-search"></i></a> </li>
+                </ul>
+            </div>
+            <div id="mainMenu-trigger"> <a class="lines-button x"><span class="lines"></span></a> </div>
+            <div id="mainMenu" class="menu-center light">
+                <div class="container">
+                    {% include "includes/menu_items.html" %}
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,54 @@
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+<section class="fullscreen" class="p-t-150 p-b-200" div data-bg-image="{% static 'images/slider/back_4.jpg' %}">
+  <div class="container">
+    <form method="POST">
+      {% csrf_token %}
+      <div class="row">
+        <div class="col-lg-8 center p-50 background-white b-r-6">
+          <h3>Бронирование номера</h3>
+          <p>Заполните все поля данной формы, для бронирования нужного вам номера.</p>
+
+          <div class="form-group">
+
+            <div class="row">
+              <div class="col-sm-6">
+                {{ form.room|as_crispy_field }}
+              </div>
+
+              <div class="col-sm-6">
+                {{ form.number_of_guests|as_crispy_field }}
+              </div>
+            </div>
+          
+            <div class="row">
+              <div class="col-sm-6">
+                {{ form.from_date|as_crispy_field }}
+                <label>В формате: 2022-10-28</label>
+              </div>
+
+              <div class="col-sm-6">
+                {{ form.to_date|as_crispy_field }}
+                <label>В формате: 2022-11-15</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-12">
+                {{ form.notes|as_crispy_field }}
+              </div>
+            </div>
+          </div>
+          <div class="text-left form-group">
+            <button class="btn btn-outline" type="submit"><i class="fa fa-receipt"></i> Забронировать номер</button>
+          </div>
+          <p class="small">На главную страницу <a href="{% url 'index' %}">Вернуться на главную страницу</a></p>
+        </div>
+      </div>
+  </div>
+  </form>
+  </div>
+  </div>
+</section>

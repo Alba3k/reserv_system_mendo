@@ -1,0 +1,35 @@
+{% load static %}
+
+<nav>
+    <ul>
+        <li><a href="{% url 'index' %}">Главная</a></li>
+        <li class="dropdown"><a href="{% url 'catalog' %}">Каталог номеров</a>
+            <ul class="dropdown-menu">
+                <li><a href="{% url 'catalog' %}">Номера</a></li>
+            </ul>
+        </li>
+        <li class="dropdown"><a href="{% url 'contacts' %}">Контакты</a>
+            <ul class="dropdown-menu">
+                <li><a href="{% url 'contacts' %}">Обратная связь</a></li>
+            </ul>
+        </li>
+        <li class="dropdown"><a href="{% url 'blog_list' %}">Блог</a>
+            <ul class="dropdown-menu">
+                <li><a href="{% url 'blog_list' %}">Новостная лента</a></li>
+            </ul>
+        </li>
+        <li class="dropdown"><a href="#">Аккаунт</a>
+            <ul class="dropdown-menu">
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'profile' %}">Профиль пользователя</a></li>
+                <li><a href="{% url 'logout' %}">Выход</a></li>
+                <li><a href="#">Востановление пароля</a></li>
+                {% else %}
+                <li><a href="{% url 'login' %}">Вход</a></li>
+                <li><a href="{% url 'register' %}">Регистрация</a></li>
+                <li><a href="#">Востановление пароля</a></li>
+                {% endif %}
+            </ul>
+        </li>
+    </ul>
+</nav>                           

@@ -1,0 +1,36 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<section class="fullscreen" class="p-t-150 p-b-200" div data-bg-image="{% static 'images/slider/back_1.jpg' %}">
+  <div class="container">
+      <div class="row">
+        <div class="col-lg-5 center p-50 background-white b-r-6">
+          <h3>Вы вышли из своей учетной записи.</h3>
+
+          <div class="form-group form-inline text-left">
+            <div class="form-check">
+            </div>
+          </div>
+
+          <div class="text-left form-group">
+            <a href="{% url 'index' %}"><button class="btn btn-outline"><i class="fa fa-home"></i> На главную</button></a>
+          </div>
+          <p class="small">Есть аккаунта? <a href="{% url 'login' %}">Вход</a>
+          </p>
+        </div>
+      </div>
+    
+  </div>
+  </div>
+</section>
+
+{% include "includes/footer.html" %}
+
+{% include "includes/scripts.html" %}
+
+{% endblock content %}

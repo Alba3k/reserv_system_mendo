@@ -1,0 +1,49 @@
+{% load static %}
+
+<a id="scrollTop"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
+
+<script src="{% static '/js/jquery.js' %}"></script>
+<script src="{% static '/js/plugins.js' %}"></script>
+<script src="{% static '/js/functions.js' %}"></script>
+
+<!--SLIDER-->
+<link href="{% static '/plugins/vegas/vegas.min.css' %}" rel="stylesheet">
+<script src="{% static '/plugins/vegas/vegas.min.js' %}"></script>
+
+<script>
+    $(function () {
+        $("#vegas-slideshow").vegas({
+            delay: 8000,
+            transition: 'fade2',
+            transitionDuration: 1000,
+            slides: [{
+                src: "{% static '/images/slider/5.jpg' %}"
+            }, {
+                src: "{% static '/images/slider/6.jpg' %}"
+            }, {
+                src: "{% static '/images/slider/7.jpg' %}"
+            }]
+        });
+    });
+</script>
+
+<!-- Date & Time Picker -->
+<link rel="stylesheet" href="{% static '/plugins/daterangepicker/daterangepicker.css' %}" type="text/css" />
+<script src="{% static 'plugins/moment/moment.min.js' %}"></script>
+<script src="{% static 'plugins/daterangepicker/daterangepicker.js' %}"></script>
+
+<!-- Date Range Picker trigger code -->
+<script>
+    $(function () {
+        $('input[name="fromDate"]').daterangepicker({
+            singleDatePicker: true,
+            /* showDropdowns: true,*/
+        });
+
+        $('input[name="toDate"]').daterangepicker({
+            singleDatePicker: true,
+            /* showDropdowns: true,*/
+        });
+
+    });
+</script>

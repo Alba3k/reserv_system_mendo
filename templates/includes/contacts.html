@@ -1,0 +1,97 @@
+{% load static %}
+
+<section class="p-t-150 p-b-200"
+    style="background-image:url({% static 'images/contacts/background.png' %}); background-position:71% 22%;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 class="m-b-10">Контакты нашего отеля</h2>
+                        <p class="lead">Наш головной офис в Европе</p>
+                    </div>
+                    <div class="col-lg-6 m-b-30">
+                        <address>
+                            <strong>Головной офис:</strong><br>
+                            795 Задарска, 12<br>
+                            Макарска-ривьера, Хорватия 21300<br>
+                        </address>
+                        <strong>Телефон:</strong> (+1) 1234 56789
+                        <br>
+                        <strong>Факс:</strong> (+1) 12 3456 78910
+                        <br>
+                        <strong>Электронная почта:</strong> admin@mendo.click
+                    </div>
+
+                    <div class="col-lg-6 m-b-30">
+                        <address>
+                            <strong>Филиал:</strong><br>
+                            795 Задарска, 18<br>
+                            Макарска-ривьера, Хорватия 21300<br>
+                        </address>
+                        <strong>Телефон:</strong> (+1) 1234 56789
+                        <br>
+                        <strong>Факс:</strong> (+1) 12 3456 78910
+                        <br>
+                        <strong>Электронная почта:</strong> admin@mendo.click
+                    </div>
+                    <div class="col-lg-12 m-b-30">
+                        <h4>Мы в социальных сетях</h4>
+                        <div class="social-icons social-icons-light social-icons-colored-hover">
+                            <ul>
+                                <li class="social-rss"><a href="#"><i class="fa fa-rss"></i></a></li>
+                                <li class="social-facebook"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li class="social-twitter"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li class="social-vimeo"><a href="#"><i class="fab fa-vimeo"></i></a></li>
+                                <li class="social-youtube"><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                <li class="social-instagram"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li class="social-pinterest"><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                                <li class="social-gplus"><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                                <li class="social-dribbble"><a href="#"><i class="fab fa-dribbble"></i></a></li>
+                                <li class="social-skype"><a href="#"><i class="fab fa-skype"></i></a></li>
+                                <li class="social-linkedin"><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                <li class="social-behance"><a href="#"><i class="fab fa-behance"></i></a></li>
+                                <li class="social-flickr"><a href="#"><i class="fab fa-flickr"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 offset-1">
+                <form class="widget-contact-form" novalidate action="include/contact-form.php" role="form"
+                    method="post">
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="name">Имя</label>
+                            <input type="text" aria-required="true" required name="widget-contact-form-name"
+                                class="form-control required name" placeholder="Имя контактного лица">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="email">Электронная почта</label>
+                            <input type="email" aria-required="true" required name="widget-contact-form-email"
+                                class="form-control required email" placeholder="Ваш электронный адрес">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Сообщение</label>
+                        <textarea type="text" required name="widget-contact-form-message" rows="8"
+                            class="form-control required" placeholder="Введите ваше сообщение"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="float-left">
+                            <button class="btn btn-light" type="submit" id="form-submit"><i
+                                    class="fa fa-paper-plane"></i>&nbsp;Послать сообщение</button>
+                        </div>
+                        <div class="float-right">
+                            <a href="{% url 'index' %}" class="btn btn-light"><i class="fa fa-receipt"></i>На
+                                главную</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

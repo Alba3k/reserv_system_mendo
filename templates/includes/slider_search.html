@@ -1,0 +1,15 @@
+{% load static %}
+
+<div id="slider" class="inspiro-slider dots-creative" data-height-xs="360">
+    <div class="slide" style="background-image:url({% static 'images/slider/11.jpg' %});">
+        <div class="bg-overlay"></div>
+        <div class="container">
+            <div class="slide-captions text-center text-light">
+                <h2>Результаты поиска согласно запроса:</h2>
+            </div>
+            <div class="slide-captions text-center text-light">
+                <h3>категория: {{ category }}, с {{ date_first }} по {{ date_last }}, для {{ num_guest }} гостей</h3>
+            </div>
+        </div>
+    </div>
+</div>

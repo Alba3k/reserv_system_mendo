@@ -1,0 +1,20 @@
+{% load static %}
+
+<section>
+    <div class="container">
+        <div class="text-center m-b-40">
+            <h4 class="text-medium m-t-0">найдено номеров: {{ total }}</h4>
+            <div class="seperator"><i class="fa fa-dot-circle-o"></i></div>
+            <div class="row">
+                {% for i in res_room %}
+                <div class="col-lg-6">
+                    <div role="alert" class="alert alert-success alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert"></button>
+                        <strong><i class="fa fa-check-circle"></i><a class="alert-link" href="{{ i }}"> Номер {{ i }}</a>
+                        </strong> доступен для бронирования на указанную дату с данными параметрами.
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+</section>
