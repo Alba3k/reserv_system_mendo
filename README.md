@@ -1,10 +1,10 @@
 <kbd><img src="img/MENDO.png" /></kbd>
 
-![GitHub commit activity](https://img.shields.io/github/commit-activity/w/Alba3k/room_reservation_system_Mendo?style=for-the-badge)
-![GitHub last commit](https://img.shields.io/github/last-commit/Alba3k/room_reservation_system_Mendo?style=for-the-badge)
-![GitHub](https://img.shields.io/github/license/Alba3k/room_reservation_system_Mendo?style=for-the-badge)
-![GitHub repo size](https://img.shields.io/github/repo-size/Alba3k/room_reservation_system_Mendo?style=for-the-badge)
-![GitHub repo file count](https://img.shields.io/github/directory-file-count/Alba3k/room_reservation_system_Mendo?style=for-the-badge)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/w/Alba3k/reservation_system?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/Alba3k/reservation_system?style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/Alba3k/reservation_system?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/Alba3k/reservation_system?style=for-the-badge)
+![GitHub repo file count](https://img.shields.io/github/directory-file-count/Alba3k/reservation_system?style=for-the-badge)
 ![GitHub followers](https://img.shields.io/github/followers/Alba3k?style=social)
 
 > '**mendo**' - на языке эсперанто означает '**бронирование**'   
