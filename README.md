@@ -2,6 +2,7 @@
 
 ![GitHub](https://img.shields.io/github/license/Alba3k/reserv_system_mendo?style=for-the-badge)
 ![GitHub repo size](https://img.shields.io/github/repo-size/Alba3k/reserv_system_mendo?style=for-the-badge)
+![GitHub repo file count](https://img.shields.io/github/directory-file-count/Alba3k/reserv_system_mendo?style=for-the-badge)
 ![GitHub followers](https://img.shields.io/github/followers/Alba3k?style=social)
 
 > '**mendo**' - на языке эсперанто означает '**бронирование**'   
