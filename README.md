@@ -1,5 +1,6 @@
 <kbd><img src="img/MENDO.png" /></kbd>
 
+![GitHub](https://img.shields.io/github/license/Alba3k/reserv_system_mendo?style=for-the-badge)
 ![GitHub followers](https://img.shields.io/github/followers/Alba3k?style=social)
 
 > '**mendo**' - на языке эсперанто означает '**бронирование**'   
