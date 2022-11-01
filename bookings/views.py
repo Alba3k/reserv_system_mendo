@@ -1,8 +1,9 @@
 from django.views.generic import ListView, TemplateView, DetailView
 from django.http import HttpResponse, HttpResponseNotFound, Http404
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
 from django.shortcuts import redirect, render
+from django.contrib.auth.models import User
+from django.core.mail import send_mail
 from django.contrib import messages
 from django.utils import timezone
 from django.db import connection
@@ -27,7 +28,6 @@ def time_slot_func(date_first, date_last):
     del res[0]
     res.pop()
     day_for_booking = set(res)
-    # получаем временной слот для бронирования в виде сета
     return day_for_booking
 
 
@@ -51,7 +51,6 @@ def get_booking_id(room):
         row = row.split()
         row = set(row)
         lst.append(row)
-    # сет брони по выбранному номеру
     return lst
 
 
@@ -83,6 +82,7 @@ def check_capacity(number_of_guests, room):
 
 @login_required
 def reserved(request):
+
     if request.method == "POST":
         form = BookingForm(request.POST)
         if form.is_valid():
@@ -109,7 +109,8 @@ def reserved(request):
                     post.customer = User.objects.get(username=request.user)
                     post.save()
 
-                    messages.success(request, f'Бронирование номера на период с {from_date} по {to_date}, для {number_of_guests} гостей создано.')
+                    messages.success(request, f'Бронирование номера на период с {from_date} \
+                     по {to_date}, для {number_of_guests} гостей создано.')
                     return redirect('index')
                 else:
                     form = BookingForm()

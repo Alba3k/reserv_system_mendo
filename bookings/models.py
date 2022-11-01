@@ -1,15 +1,49 @@
 from django.db import models
 from django.utils import timezone
+from django.core.mail import EmailMessage
 from django.contrib.auth.models import User
 
+import string
+import random
 import datetime
 
 from rooms.models import Room
 
 
+def id_generator(size=9, chars=string.ascii_uppercase + string.digits):
+    return ''.join(random.choice(chars) for _ in range(size))
+
+
 class Booking(models.Model):
+    PENDING = 1
+    ACCEPTED = 2
+    DENIED = 3
+
+    ARRIVED = 4
+    LEFT = 5
+
+    PAYED = 6
+    FINISHED = 7
+    CANCELLED = 8
+
+    BOOKING_STATUS_CHOICES = (
+        (PENDING, 'Ожидание'),
+        (ACCEPTED, 'Принято'),
+        (DENIED, 'Отклонен'),
+
+        (PAYED, 'Оплачено'),
+        (CANCELLED, 'Отмена'),
+        
+        (ARRIVED, 'Прибытие'),
+        (LEFT, 'Выбытие'),
+        (FINISHED, 'Завершено'),
+    )
+    booking_status = models.SmallIntegerField(choices=BOOKING_STATUS_CHOICES,
+        default=PENDING, verbose_name='статус бронирования')
+
+    package_id = models.CharField(max_length=10, default='012345678', verbose_name='id счета на бронирование')
     room = models.ForeignKey(Room, on_delete=models.PROTECT, verbose_name='номер')
-    customer = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='гость')
+    customer = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name='гость')
 
     reservation_date = models.DateTimeField(default=timezone.now, verbose_name='дата и время бронирование')
     from_date = models.DateField(null=True, verbose_name='с')
@@ -34,14 +68,16 @@ class Booking(models.Model):
         res = [day.strftime('%Y-%m-%d') for day in days]
 
         self.time_slot = res
+        self.package_id = id_generator()
+        super().save(self.package_id)
         super().save(force_insert, force_update, using, update_fields)
 
     @staticmethod
     def get_booking_by_customer(customer_id):
         return Booking.objects.filter(customer=customer_id).order_by('-reservation_date')
-
+        
     def __str__(self):
-        return f'{self.customer, self.room.number}'
+        return self.package_id + '_' + self.room.number + '_' + str(self.number_of_guests) + '_' + str(self.total_days)
 
     class Meta:
         verbose_name_plural = 'бронирование номеров'
