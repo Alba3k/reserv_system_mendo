@@ -40,7 +40,7 @@
 
 ***Разработчик: FrontEnd & BackEnd >>> :hammer_and_pick:***
 ```team
-Александр Бабына. https://github.com/Alba3k
+https://github.com/Alba3k
 ```
 
 ***Приветствуются все пожелания и предложения по работе системы >>> :envelope:***
